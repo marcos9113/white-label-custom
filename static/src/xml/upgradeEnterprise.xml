@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-inherit="web.SearchableSetting" t-inherit-mode="extension">
+        <xpath expr="//div[@t-att-class='classNames']" position="replace">
+            <t t-if="!upgradeEnterprise">
+                <div t-att-class="classNames" t-out="0" />
+            </t>
+        </xpath>
+    </t>
+</templates>

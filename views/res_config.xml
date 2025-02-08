@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.gamerun_whitelabel</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="priority" eval="99"/>
+        <field name="arch" type="xml">
+            <!-- delete android/iOS apps links -->
+            <xpath expr="//div[@id='about']" position="replace">
+            </xpath>
+            <!-- add wwhite label configuration -->
+            <xpath expr="//div[@id='companies']" position="after">
+                <div id="whitelabel">
+                    <block title="Whitelabel">
+                        <setting help="White label your ERP with new app name, title etc.">
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <label for="gamerun_app_name" string="App name" class="col-lg-3"/>
+                                    <field name="gamerun_app_name"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label for="gamerun_app_title" string="App title" class="col-lg-3"/>
+                                    <field name="gamerun_app_title"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label for="gamerun_app_website" string="App website" class="col-lg-3"/>
+                                    <field name="gamerun_app_website"/>
+                                </div>
+                                <div class="row mt16">
+                                    <label for="gamerun_app_favicon_url" string="App favicon URL" class="col-lg-3"/>
+                                    <field name="gamerun_app_favicon_url"/>
+                                </div>
+                            </div>
+                        </setting>
+                    </block>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
